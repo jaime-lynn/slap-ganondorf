@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<audio id="hit-sound" src="boss-hit.wav" type="audio/wav"></audio>
+	<audio id="hit-sound" src="assets/boss-hit.wav" type="audio/wav"></audio>
 
 <div class="row">
 	<div class="col s3">
@@ -17,10 +17,11 @@
 			<div class="card-content white-text center-align">
 					<div id="items center-align">
 						<p>It's dangerous to go alone, take these!</p>
-						<button class="waves-effect waves-teal btn-large btn-flat" onclick="playerAddItem('shield')"><img src="mirror-shield.png"
+						<button class="waves-effect waves-teal btn-large btn-flat" onclick="gameCtrl.playerAddItem('shield')"><img src="assets/mirror-shield.png"
 	height="50"></button>
-						<button class="waves-effect waves-teal btn-large btn-flat" onclick="playerAddItem('sword')"><img src="master-sword.png" height="50"></button>
-						<button class="waves-effect waves-teal btn-large btn-flat" onclick="playerAddItem('bomb')"><img src="bomb.png" height="50"></button>
+						<button class="waves-effect waves-teal btn-large btn-flat" onclick="gameCtrl.playerAddItem('sword')"><img src="assets/master-sword.png" height="50"></button>
+						<br>
+						<button class="waves-effect waves-teal btn-large btn-flat" onclick="gameCtrl.playerAddItem('bomb')"><img src="assets/bomb.png" height="50"></button>
 </div>
 
 </div>
@@ -33,11 +34,11 @@
 			<div class="card-content white-text center-align">
 				<span class="card-title">You are Link, the Hero of Time. Defeat the evil Ganondorf!</span>
 				<p>Choose your attacks!</p>
-				<button class="waves-effect waves-green btn-large" onclick="takeHit('slap')">Stab</button>
-				<button class="waves-effect waves-teal btn-large" onclick="takeHit('punch')">Slice</button>
-				<button class="waves-effect waves-teal btn-large" onclick="takeHit('kick')">Spin Attack</button>
+				<button class="waves-effect waves-green btn-large" onclick="gameCtrl.takeHit('slap')">Stab</button>
+				<button class="waves-effect waves-teal btn-large" onclick="gameCtrl.takeHit('punch')">Slice</button>
+				<button class="waves-effect waves-teal btn-large" onclick="gameCtrl.takeHit('kick')">Spin Attack</button>
 				<br><br>
-				<button class="waves-effect waves-teal btn" onclick="reset()">Reset</button>
+				<button class="waves-effect waves-teal btn" onclick="gameCtrl.reset()">Reset</button>
 				<h5>Turn Count: <span id="hits">0</span></h5>
 			</div>
 		</div>
@@ -48,10 +49,11 @@
 			<div class="card-content white-text center-align">
 					<div id="items center-align">
 						<p>Oh no, Ganondorf found items?</p>
-						<button class="waves-effect waves-teal btn-large btn-flat" onclick="enemyAddItem('shield')"><img src="bad-shield.png"
+						<button class="waves-effect waves-teal btn-large btn-flat" onclick="gameCtrl.enemyAddItem('shield')"><img src="assets/bad-shield.png"
 	height="50"></button>
-						<button class="waves-effect waves-teal btn-large btn-flat" onclick="enemyAddItem('sword')"><img src="darknut-sword.png" height="50"></button>
-						<button class="waves-effect waves-teal btn-large btn-flat" onclick="enemyAddItem('bomb')"><img src="bomb.png" height="50"></button>
+						<button class="waves-effect waves-teal btn-large btn-flat" onclick="gameCtrl.enemyAddItem('sword')"><img src="assets/darknut-sword.png" height="50"></button>
+						<br>
+						<button class="waves-effect waves-teal btn-large btn-flat" onclick="gameCtrl.enemyAddItem('bomb')"><img src="assets/bomb.png" height="50"></button>
 </div>
 
 </div>
@@ -64,7 +66,7 @@
 <div class="col s6">
 	<div class="row">
 		<div class="col s4">
-			<img class="sprite" height="250" src="link.png">
+			<img class="sprite" height="250" src="assets/link.png">
 		</div>
 		<div class="col s2">
 			<div class="row">
@@ -92,7 +94,7 @@
 			</div>
 		</div>
 		<div class="col s2 right-align">
-			<img id="ganondorf" height="250" class="sprite" src="ganondorf.png">
+			<img id="ganondorf" height="250" class="sprite" src="assets/ganondorf.png">
 		</div>
 		</div>
 	</div>
@@ -102,7 +104,9 @@
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-<script src="game-refactor.js"></script>
+<script src="game-service.js"></script>
+<script src="game-controller.js"></script>
+<script src="app.js"></script>
 </body>
 
 </html>
