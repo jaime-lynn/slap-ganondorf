@@ -1,0 +1,1 @@
+var gameCtrl = new GameController();
